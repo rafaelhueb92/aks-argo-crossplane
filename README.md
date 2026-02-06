@@ -1,5 +1,7 @@
 # AKS with ArgoCD and Crossplane
 
+![Título](/images/cross_argo.png)
+
 ## ArgoCD Config
 
 <p> To debug the helm chart: </p>
