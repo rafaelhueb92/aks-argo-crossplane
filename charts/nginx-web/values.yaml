@@ -13,17 +13,19 @@ resources:
 
 namespace: nginx-web
 
+service:
+  port: 80
+
 serverBlock: |
   server {
     listen 80;
     server_name _;
     location / {
-        return 200 'Hello from NGINX via ARGOCD HELM!'
-        add_header Content-Type text/plain;
-    }
-    location /health {
-      return 200 'OK'
+      return 200 'Hello from NGINX via ARGOCD HELM!';
       add_header Content-Type text/plain;
     }
-
+    location /health {
+      return 200 'OK';
+      add_header Content-Type text/plain;
+    }
   }
