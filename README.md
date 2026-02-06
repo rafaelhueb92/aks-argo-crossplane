@@ -9,6 +9,7 @@
 ```
 
 <p> To create app by cli </p>
+
 ```bash
     argocd app create nginx-web \
     --project default \
