@@ -24,3 +24,5 @@ output "resource_group_name" {
 output "aks_cluster_name" {
   value = var.aks_cluster_name
 }
+
+## az aks get-credentials --resource-group rg-aks-free --name aks-free-tier
