@@ -3,3 +3,4 @@
 *.tfstate
 argo_psw
 azure-credentials.json
+terraform.tfstate.backup
