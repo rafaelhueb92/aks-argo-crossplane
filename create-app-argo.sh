@@ -8,3 +8,14 @@ argocd app create nginx-web \
 --self-heal \
 --auto-prune \
 --sync-option CreateNamespace=true
+
+argocd app create aws-app \
+--project default \
+--repo https://github.com/rafaelhueb92/aks-argo-crossplane.git \
+--path crossplane/aws \
+--dest-server https://kubernetes.default.svc \
+--dest-namespace aws \
+--sync-policy automated \
+--self-heal \
+--auto-prune \
+--sync-option CreateNamespace=true
