@@ -1,0 +1,49 @@
+apiVersion: apiextensions.crossplane.io/v2
+kind: CompositeResourceDefinition
+metadata:
+  name: storagebuckets.platform.example.com
+spec:
+  group: platform.example.com
+  scope: Cluster
+  names:
+    kind: StorageBucket
+    plural: storagebuckets
+    singular: storagebucket
+    shortNames:
+      - sb
+  versions:
+    - name: v1alpha1
+      served: true
+      referenceable: true
+      schema:
+        openAPIV3Schema:
+          type: object
+          properties:
+            spec:
+              type: object
+              properties:
+                environment:
+                  type: string
+                  description: "Ambiente (dev, staging, prod)"
+                  enum:
+                    - dev
+                    - staging
+                    - prod
+                  default: dev
+                region:
+                  type: string
+                  description: "Região do Azure"
+                  enum:
+                    - eastus
+                    - westus2
+                    - brazilsouth
+                  default: eastus
+                storageClass:
+                  type: string
+                  description: "Classe de storage (standard ou premium)"
+                  enum:
+                    - standard
+                    - premium
+                  default: standard
+              required:
+                - environment

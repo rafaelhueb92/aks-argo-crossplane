@@ -1,0 +1,15 @@
+apiVersion: storage.azure.upbound.io/v1beta2
+kind: Account
+metadata:
+  name: staccrosspl100226
+spec:
+  forProvider:
+    resourceGroupName:  rg-crossplane-random
+    location: eastus
+    accountTier: Standard
+    accountReplicationType: LRS
+    tags:
+      environment: lab
+      managed-by: crossplane
+  providerConfigRef:
+      name: default

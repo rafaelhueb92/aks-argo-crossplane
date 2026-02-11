@@ -1,0 +1,8 @@
+apiVersion: platform.example.com/v1alpha1
+kind: StorageBucket
+metadata:
+  name: myapp
+spec:
+  environment: dev
+  region: eastus
+  storageClass: standard
